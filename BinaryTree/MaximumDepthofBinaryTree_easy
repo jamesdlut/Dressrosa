@@ -24,7 +24,7 @@ public class MaxDepthofBTSol {
 		}
 	}
 	
-	public static void main (String arg[]) {
+	public static void main(String arg[]) {
 		TreeNode t1 = new TreeNode(1);
 		TreeNode t2 = new TreeNode(2);
 		TreeNode t3 = new TreeNode(3);
@@ -36,3 +36,6 @@ public class MaxDepthofBTSol {
 		System.out.print(depth);
 	}
 }
+/*
+output: 3
+*/
