@@ -53,7 +53,7 @@ public class BTLevelOrderT2Sol {
 		}
 	}
 	
-	public static void main(String arg[]) {
+	public static void main(String[] args) {
 		TreeNode t1 = new TreeNode(3);
 		TreeNode t2 = new TreeNode(9);
 		TreeNode t3 = new TreeNode(20);
