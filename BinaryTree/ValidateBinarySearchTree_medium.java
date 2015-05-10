@@ -7,7 +7,7 @@ The right subtree of a node contains only nodes with keys greater than the node'
 Both the left and right subtrees must also be binary search trees.
 */
 /*
-notice ReturnType (int min, int max, boolean isBST)
+recursive reasoning
 dfs(5)
 left = dfs(3)
  left = dfs(2)
