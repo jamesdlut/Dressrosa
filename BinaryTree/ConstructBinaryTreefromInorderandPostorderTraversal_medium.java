@@ -5,7 +5,7 @@ Note:
 You may assume that duplicates do not exist in the tree.
 */
 /*
-使用递归的思想，先找到根节点（它就是post order最后一个），然后再在inorder中找到它，以确定左子树的node个数
+使用递归的思想，先找到根节点（它就是post order最后一个），然后再在inorder中找到它，以确定左子树的node个数,
 然后分别确定左子树右子树的左右边界，就是左右子树的划分关系
 e.g.
 {4, 5, 2, 7, 8, 1, 3}
