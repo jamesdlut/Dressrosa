@@ -21,7 +21,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
  * }
  */
 public class Solution {
-   // recursion 
+    // recursion 
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> rst = new ArrayList<Integer>();
         rec(root, rst);
@@ -37,6 +37,27 @@ public class Solution {
         rst.add(root.val);
         rec(root.right, rst);
     }
+    // iteration
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> rst = new ArrayList<Integer>();
+        if (root == null) {
+            return rst;
+        }
+        
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while (true) {
+            while (cur != null) {
+                s.push(cur);
+                cur = cur.left;
+            }
+            if (s.isEmpty()) {
+                break;
+            }
+            cur = s.pop();
+            rst.add(cur.val);
+            cur = cur.right;
+        }
+        return rst;
+    }
 }  
-   // iteration
-   
