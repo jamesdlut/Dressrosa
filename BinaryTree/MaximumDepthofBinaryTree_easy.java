@@ -3,16 +3,42 @@
  * Given a binary tree, find its maximum depth.
  * The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
  */
-package BinaryTree;
-
 public class MaxDepthofBTSol {
-	public static int maxDepth(TreeNode root) {
+	public static int maxDepth1(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
-		int left = maxDepth(root.left);
-		int right = maxDepth(root.right);
+		int left = maxDepth1(root.left);
+		int right = maxDepth1(root.right);
 		return Math.max(left, right) + 1;
+	}
+	
+	public static int maxDepth2(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		
+		TreeNode dummy = new TreeNode(0);
+		Queue<TreeNode> q = new LinkedList<TreeNode>();
+		q.offer(root);
+		q.offer(dummy);
+		int depth = 0;
+		while (!q.isEmpty()) {
+			TreeNode cur = q.poll();
+			if (cur == dummy) {
+				depth++;
+				if (!q.isEmpty()) {
+					q.offer(dummy);
+				}
+			}
+			if (cur.left != null) {
+				q.offer(cur.left);
+			}
+			if (cur.right != null) {
+				q.offer(cur.right);
+			}
+		}
+		return depth;
 	}
 	
 	public static class TreeNode {
@@ -32,10 +58,13 @@ public class MaxDepthofBTSol {
 		t1.left = t2;
 		t1.right = t3;
 		t2.left = t4;
-		int depth = maxDepth(t1);
-		System.out.print(depth);
+		System.out.print(maxDepth1(t1));
+		System.out.print("\n");
+		System.out.print(maxDepth2(t1));
 	}
 }
 /*
-output: 3
+outputs: 
+3
+3
 */
