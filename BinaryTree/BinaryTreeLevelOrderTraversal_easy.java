@@ -16,7 +16,7 @@ return its level order traversal as:
 ]
 */
 public class BTLevelOrderTSol {
-	public static List<List<Integer>> levelOrder(TreeNode root) {
+	public static List<List<Integer>> levelOrder1(TreeNode root) {
 		List rst = new ArrayList();
 		
 		if (root == null) {
@@ -43,6 +43,26 @@ public class BTLevelOrderTSol {
 		return rst;
 	}
 	
+	public static List<List<Integer>> levelOrder2(TreeNode root) {
+		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+		levelVisit(root, 0, rst);
+		return rst;
+	}
+	
+	public static void levelVisit(TreeNode root, int level, List<List<Integer>> rst) {
+		if (root == null) {
+			return;
+		}
+		
+		if (level >= rst.size()) {
+			rst.add(new ArrayList<Integer>());
+		}
+		
+		rst.get(level).add(root.val);
+		levelVisit(root.left, level + 1, rst);
+		levelVisit(root.right, level + 1, rst);
+	}
+	
 	public static class TreeNode {
 		int val;
 		TreeNode left;
@@ -62,9 +82,9 @@ public class BTLevelOrderTSol {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		List rst = new ArrayList();
-		rst = levelOrder(t1);
-		System.out.print(rst);
+		System.out.print(levelOrder1(t1));
+		System.out.print("\n");
+		System.out.print(levelOrder2(t1));
 	}
 }
 /*
