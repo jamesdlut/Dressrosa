@@ -4,6 +4,14 @@ Reverse a singly linked list.
 Hint:
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 */
+/*
+变的是结点之间的相互关系
+指针A ＝ 指针B指向的结点，效果是拿指针A代替指针B指向指针B指向的结点
+head.next指针所指的结点暂时被tmp指针指向
+pre指针所指的结点，被head.next指针代替指向, (1st round: 1 -> null, 2nd round: 2 -> 1)
+head指针所指的结点，被pre指针代替指向, (1st: 1结点从head变成了pre, null顺带变成pre.next, 2nd: 2结点从head变成了pre）
+暂时被tmp指针指向的结点被head指针指向, (1st: 2从head.next变成head, 2nd: 3从head.next变成head)
+*/
 public class reverseListSol {
 	public static ListNode reverseList1(ListNode head) {
 		ListNode pre = null;
