@@ -26,8 +26,8 @@ public class partitionListSol {
 			}
 			head = head.next;
 		}
-        right.next = null;
-        left.next = dummyRight.next;
+		right.next = null;
+		left.next = dummyRight.next;
 		return dummyLeft.next;	
 	}
 	
