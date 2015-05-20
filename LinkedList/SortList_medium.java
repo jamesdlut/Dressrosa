@@ -3,7 +3,7 @@ Sort List
 Sort a linked list in O(n log n) time using constant space complexity.
 */
 /*
-our question is to sort whole list, different with binary search, which is to find a target in O(log n) time, 
+our question is to sort whole list, different with binary search, which is to find one target in O(log n) time, 
 T(n)
 T(n / 2) T(n / 2)
 T(n / 2^2) T(n / 2^2) T(n / 2^2) T(n / 2^2)
