@@ -6,11 +6,12 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 */
 /*
 变的是结点之间的相互关系
-指针A ＝ 指针B指向的结点，效果是拿指针A代替指针B指向指针B指向的结点
-head.next指针所指的结点暂时被tmp指针指向
-pre指针所指的结点，被head.next指针代替指向, (1st round: 1 -> null, 2nd round: 2 -> 1)
-head指针所指的结点，被pre指针代替指向, (1st: 1结点从head变成了pre, null顺带变成pre.next, 2nd: 2结点从head变成了pre）
-暂时被tmp指针指向的结点被head指针指向, (1st: 2从head.next变成head, 2nd: 3从head.next变成head)
+注意"指代某结点"和"next指针指向某结点"之间的区别
+ListNode A ＝ ListNode B, 效果用ListNode A指代ListNode B代表的结点, 方便指针滑动, ListNode B不动, 滑动ListNode A进行具体操作,
+ListNode tmp = head.next, 用ListNode tmp指代ListNode head的next指针指向的结点
+head.next = pre, 用ListNode head的next指针指向pre代表的结点, 
+pre = head, 用ListNode pre指代ListNode head代表的结点, 
+head = tmp, 用ListNode head指代ListNode tmp代表的结点,
 */
 public class reverseListSol {
 	public static ListNode reverseList1(ListNode head) {
