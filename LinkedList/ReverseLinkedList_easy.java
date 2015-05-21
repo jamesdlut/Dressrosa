@@ -6,9 +6,9 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 */
 /*
 变的是结点之间的相互关系
-注意"指代某结点"和"next指针指向某结点"之间的区别
-ListNode A ＝ ListNode B, 效果用ListNode A指代ListNode B代表的结点, 方便指针滑动, ListNode B不动, 滑动ListNode A进行具体操作,
-ListNode tmp = head.next, 用ListNode tmp指代ListNode head的next指针指向的结点
+注意"指代某结点"和"next指针指向某结点"之间的区别,
+ListNode A ＝ ListNode B, 效果是用ListNode A指代ListNode B代表的结点, 方便指针滑动, ListNode B不动, 滑动ListNode A进行具体操作,
+ListNode tmp = head.next, 用ListNode tmp指代ListNode head的next指针指向的结点,
 head.next = pre, 用ListNode head的next指针指向pre代表的结点, 
 pre = head, 用ListNode pre指代ListNode head代表的结点, 
 head = tmp, 用ListNode head指代ListNode tmp代表的结点,
