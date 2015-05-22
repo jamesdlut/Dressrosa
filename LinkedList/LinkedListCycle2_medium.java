@@ -12,3 +12,56 @@ Can you solve it without using extra space?
 X + K = (m - 2n)Y
 X和K的关系是基于Y互补的。等于说, 两个指针相遇以后, 再往下走X步就回到Cycle的起点了。这就可以有O(n)的实现了。
 */
+public class detectCycleSol {
+	public static ListNode detectCycle(ListNode head) {
+		if (head == null) {
+			return null;
+		}
+		
+		ListNode s = head;
+		ListNode f = head;
+		ListNode cross = null;
+		while (f != null && f.next != null) {
+			s = s.next;
+			f = f.next.next;
+			if (s == f) {
+				cross = s;
+				break;
+			}
+		}
+		
+		if (cross == null) {
+			return null;
+		}
+		
+		s = head;
+		while (true) {
+			if (s == f) {
+				return s;
+			}
+			s = s.next;
+			f = f.next;	
+		}
+	}
+	
+	public static class ListNode {
+		int val;
+		ListNode next;
+		ListNode(int x) {
+			val = x;
+			next = null;
+		}
+	}
+	
+	public static void main(String[] args) {
+		ListNode n1 = new ListNode(1);
+		ListNode n2 = new ListNode(2);
+		ListNode n3 = new ListNode(3);
+		ListNode n4 = new ListNode(4);
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n2;
+		System.out.print(detectCycle(n1).val);
+	}
+}
