@@ -6,3 +6,10 @@ You must do this in-place without altering the nodes' values.
 For example,
 Given {1,2,3,4}, reorder it to {1,4,2,3}.
 */
+/*
+4 STEP:
+1. find the mid.
+2. cut the list to two list.
+3. REVERSE the right side.
+4. MERGE the two list.
+*/
