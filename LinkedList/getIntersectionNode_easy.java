@@ -14,3 +14,10 @@ The linked lists must retain their original structure after the function returns
 You may assume there are no cycles anywhere in the entire linked structure.
 Your code should preferably run in O(n) time and use only O(1) memory.
 */
+/*
+SOL 1
+1. 得到2个链条的长度.
+2. 将长的链条向前移动差值(len1 - len2)
+3. 两个指针一起前进, 遇到相同的即是交点, 如果没找到, 返回null.
+相当直观的解法. 空间复杂度O(1), 时间复杂度O(m+n)
+*/
