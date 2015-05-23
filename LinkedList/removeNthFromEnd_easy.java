@@ -8,3 +8,6 @@ Note:
 Given n will always be valid.
 Try to do this in one pass.
 */
+/*
+使用快慢指针, 快指针先行移动N步. 用慢指针指向要移除的Node的前一个Node.
+*/
