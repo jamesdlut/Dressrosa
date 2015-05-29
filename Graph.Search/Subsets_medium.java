@@ -35,3 +35,80 @@ int numberOfTrailingZeros(int i) 给定一个int类型数据, 返回这个数据
 1的二进制表示为: 1最右边开始数起连续的0的个数为: 0  
 2的二进制表示为: 10最右边开始数起连续的0的个数为: 1
 */
+public class SubsetsSol {
+	public static List<List<Integer>> subsets1(int[] nums) {
+		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+		if (nums == null) {
+			return rst; 
+		}
+		Arrays.sort(nums);
+		dfs(nums, 0, new ArrayList<Integer>(), rst);
+		return rst;
+	}
+	
+	public static void dfs(int[] nums, int index, List<Integer> list, List<List<Integer>> rst) {
+		// 先加一个空集合进去
+		rst.add(new ArrayList<Integer>(list));
+		for (int i = index; i < nums.length; i++) {
+			list.add(nums[i]);
+			dfs(nums, i + 1, list, rst);
+			list.remove(list.size() - 1);
+		}
+	}
+	
+	public static List<List<Integer>> subsets2(int[] nums) {
+		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+		if (nums == null) {
+			return rst;
+		}
+		Arrays.sort(nums);
+		return dfs2(nums, 0, new HashMap<Integer, List<List<Integer>>>());
+	}
+	
+	public static List<List<Integer>> dfs2(int[] nums, int index, HashMap<Integer, List<List<Integer>>> map) {
+		int len = nums.length;
+		if (map.containsKey(index)) {
+			return map.get(index);
+		}
+		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+		List<Integer> pathTmp = new ArrayList<Integer>();
+		rst.add(pathTmp);
+		for (int i = index; i < len; i++) {
+			List<List<Integer>> left = dfs2(nums, i + 1, map);
+			for (List<Integer> list : left) {
+				pathTmp = new ArrayList<Integer>();
+				pathTmp.add(nums[i]);
+				pathTmp.addAll(list);
+				rst.add(pathTmp);
+			}
+		}
+		map.put(index, rst);
+		return rst;
+	}
+	
+	public static List<List<Integer>> subsets3(int[] nums) {
+		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+		if (nums == null || nums.length == 0) {
+			return rst;
+		}
+		int len = nums.length;
+		Arrays.sort(nums);
+		long numOfSet = (long)Math.pow(2, len);
+		for (int i = 0; i < numOfSet; i++) {
+			long tmp = i;
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			while (tmp != 0) {
+				int indexOfLast1 = Long.numberOfTrailingZeros(tmp);
+				list.add(nums[indexOfLast1]);
+				tmp ^= (1 << indexOfLast1);
+			}
+			rst.add(list);
+		}
+		return rst;
+	}
+	
+	public static void main(String[] args) {
+		int[] test = {1, 2, 3};
+		System.out.print(subsets3(test));
+	}
+}
