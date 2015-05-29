@@ -25,3 +25,87 @@ SOL 2
 SOL 3
 在2解基础进一步优化, 使用for循环替代while循环, 更简洁
 */
+public class PermuteSeqSol {
+	public static String getPermutation1(int n, int k) {
+		if (n == 0) {
+			return "";
+		}
+		// n!
+		int num = 1;
+		for (int i = 1; i <= n; i++) {
+			num *= i;
+		}
+		
+		boolean[] use = new boolean[n];
+		for (int i = 0; i < n; i++) {
+			use[i] = false;
+		}
+		
+		k = k - 1;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < n; i++) {
+			num = num / (n - i);
+			int index = k / num;
+			k = k % num;
+			for (int j = 0; j < n; j++) {
+				if (!use[j]) {
+					if (index == 0) {
+						sb.append((j + 1) + "");
+						use[j] = true;
+						break;
+					}
+					index--;
+				}
+			}
+		}
+		return sb.toString();
+	}
+	
+	public static String getPermutation2(int n, int k) {
+		LinkedList<Character> digits = new LinkedList<Character>();
+		for (char i = '1'; i <= '0' + n; i++) {
+			digits.add(i);
+		}
+		k = k - 1;
+		StringBuilder sb = new StringBuilder();
+		int num = 1;
+		for (int i = 1; i <= n; i++) {
+			num *= i;
+		}
+		int cur = n;
+		while (!digits.isEmpty()) {
+			num = num / cur;
+			cur--;
+			int digitIndex = k / num;
+			k = k % num;
+			sb.append(digits.get(digitIndex));
+			digits.remove(digitIndex);
+		}
+		return sb.toString();
+	}
+	
+	public static String getPermutation3(int n, int k) {
+		LinkedList<Character> digits = new LinkedList<Character>();
+		for (char i = '1'; i <= '0' + n; i++) {
+			digits.add(i);
+		}
+		k = k - 1;
+		StringBuilder sb = new StringBuilder();
+		int num = 1;
+		for (int i = 1; i <= n; i++) {
+			num *= i;
+		}
+		for (int i = n; i >= 1; i--) {
+			num = num / i;
+			int digitIndex = k / num;
+			k = k % num;
+			sb.append(digits.get(digitIndex));
+			digits.remove(digitIndex);
+		}
+		return sb.toString();
+	}
+	
+	public static void main(String[] args) {
+		System.out.print(getPermutation3(3, 5));
+	}
+}
