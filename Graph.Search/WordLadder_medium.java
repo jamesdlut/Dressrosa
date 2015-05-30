@@ -25,3 +25,44 @@ HAT, HBT, HCT, HDT...
 HIA, HIB, HIC, HID...
 HIT可以有这么多种变换方式, 而AIT, BIT本身也可以以相同的方式展开, 这就形成了一个相当大的树
 */
+/*
+public StringBuilder(String str)
+Constructs a string builder initialized to the contents of the specified string.
+*/
+public class Solution {
+    public int ladderLength(String beginWord, String endWord, Set<String> wordDict) {
+        if (beginWord == null || endWord == null || wordDict == null) {
+            return 0;
+        }
+        
+        Queue<String> q = new LinkedList<String>();
+        q.offer(beginWord);
+        HashSet<String> set = new HashSet<String>();
+        set.add(beginWord);
+        int level = 1;
+        while (!q.isEmpty()) {
+            int size = q.size();
+            level++;
+            for (int i = 0; i < size; i++) {
+                String s = q.poll();
+                int len = s.length();
+                for (int j = 0; j < len; j++) {
+                    StringBuilder sb = new StringBuilder(s);
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        sb.setCharAt(j, c);
+                        String tmp = sb.toString();
+                        if (tmp.equals(endWord)) {
+                            return level;
+                        }
+                        if (set.contains(tmp) || !wordDict.contains(tmp)) {
+                            continue;
+                        }
+                        set.add(tmp);
+                        q.offer(tmp);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+}
