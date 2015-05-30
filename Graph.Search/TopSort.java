@@ -11,7 +11,7 @@ The topological order can be:
 [0, 2, 3, 1, 5, 4]
 */
 /*
-入度和出度 每次找到入度为0的点，去掉其边，看剩下的点 拓扑排序并不是唯一的
+入度和出度 每次找到入度为0的点, 去掉其边, 看剩下的点拓扑排序并不是唯一的
 */
 public class TopSortSol {
 	public static ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
