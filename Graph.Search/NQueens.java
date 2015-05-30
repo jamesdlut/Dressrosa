@@ -80,8 +80,62 @@ public class NQueensSol {
 		}
 	}
 
+	public static List<String[]> solveNQueens2(int n) {
+		List<String[]> ret = new ArrayList<String[]>();
+		if (n == 0) {
+			return ret;
+		}
+		StringBuilder[] list = new StringBuilder[n];
+		for (int i = 0; i < n; i++) {
+			list[i] = new StringBuilder();
+			for (int j = 0; j < n; j++) {
+				list[i].append('.');
+			}
+		}
+		dfs(n, list, ret, 0);
+		return ret;
+	}
+	
+	public static void dfs(int n, StringBuilder[] list, List<String[]> ret, int index) {
+		int rows = list.length;
+		if (n == 0) {
+			String[] strs = new String[rows];
+			for (int i = 0; i < rows; i++) {
+				strs[i] = list[i].toString();
+			}
+			ret.add(strs);
+			return;
+		}
+		if (index >= rows * rows) {
+			return;
+		}
+		for (int i = index; i < rows * rows; i++) {
+			int row = i / rows;
+			int col = i % rows;
+			if (!canPut(list, row, col)) {
+				continue;
+			}
+			list[row].setCharAt(col, 'Q');
+			dfs(n - 1, list, ret, i + 1);
+			list[row].setCharAt(col, '.');
+		}
+		return;
+	}
+	
+	public static boolean canPut(StringBuilder[] list, int row, int col) {
+		for (int i = 0; i < list.length; i++) {
+			for (int j = 0; j < list.length; j++) {
+				if (list[i].charAt(j) == 'Q' &&
+						(i == row || j == col || Math.abs(i - row) == Math.abs(j - col))) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
 	public static void main(String[] args) {
-		List<String[]> list = solveNQueens1(4);
+		List<String[]> list = solveNQueens2(4);
 		for (String[] str : list) {
 			for (String s : str) {
 				System.out.println(s);
