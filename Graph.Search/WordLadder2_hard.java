@@ -17,11 +17,6 @@ Note:
 All words have the same length.
 All words contain only lowercase alphabetic characters.
 */
-/*
-SOL 2
-bfs: find the shortest length, dfs: find all the shortest solutions
-distance 每个结点到起始结点的距离
-*/
 public class WordLadder2Sol {
 	public static List<List<String>> findLadders1(String start, String end, Set<String> dict) {
 		List<List<String>> ret = new ArrayList<List<String>>();
@@ -72,7 +67,11 @@ public class WordLadder2Sol {
 		}
 		return ret;
 	}
-	
+	/*
+        SOL 2
+        bfs: find the shortest length, dfs: find all the shortest solutions
+        distance 每个结点到起始结点的距离
+        */
 	public static List<List<String>> findLadders2(String start, String end, Set<String> dict) {
 		List<List<String>> ret = new ArrayList<List<String>>();
 		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
