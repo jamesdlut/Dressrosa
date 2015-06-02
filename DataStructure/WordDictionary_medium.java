@@ -18,6 +18,7 @@ You should be familiar with how a Trie works. If not, please work on this proble
 */
 /*
 字典树 + dfs
+search runtime O(1)
 */
 public class WordDictSol {
 	public static class WordDictionary {
