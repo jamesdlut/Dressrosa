@@ -97,7 +97,12 @@ public class WordDictSol {
 	// wordDictionary.search("pattern");
 	public static void main(String[] args) {
 		WordDictionary wordDictionary = new WordDictionary();
-		wordDictionary.addWord("word");
-		System.out.print(wordDictionary.search("pattern"));
+		wordDictionary.addWord("bad");
+		wordDictionary.addWord("dad");
+		wordDictionary.addWord("mad");
+		System.out.print(wordDictionary.search("pad") + "\n");
+		System.out.print(wordDictionary.search("bad") + "\n");
+		System.out.print(wordDictionary.search(".ad") + "\n");
+		System.out.print(wordDictionary.search("b..") + "\n");
 	}
 }
