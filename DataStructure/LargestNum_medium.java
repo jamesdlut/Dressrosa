@@ -7,8 +7,8 @@ Note: The result may be very large, so you need to return a string instead of an
 /*
 贪心思路: 对于两个备选数字a和b, 如果str(a) + str(b) > str(b) + str(a), 则a在b之前, 否则b在a之前
 按照此原则对原数组从大到小排序即可
-时间复杂度O (nlogn)
-易错样例：
+时间复杂度O (nlogn) heap sort
+易错样例:
 Input: [0,0]
 Output: "00"
 Expected: "0"
