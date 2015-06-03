@@ -11,4 +11,6 @@ You may assume k is always valid, 1 ≤ k ≤ array's length.
 SOL 1
 使用改进的Quicksort partition, O(n) time, O(1) space
 note: quickselect worst case O(n^2) best/average case O(n)
+Choose the last one as the pivot
+left: the first one which is bigger than pivot. Change pivot.
 */
