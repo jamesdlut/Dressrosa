@@ -6,6 +6,7 @@ Note:
 You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 */
 /*
+SOL 1
 1. 从左往右扫描, 计算0-i的这个区间的最大利润. 方法可以参见股票第一题.
 2. 从右往左扫描, 计算i-len这个区间的最大利润.
 3. 再从头至尾扫一次, 每个节点加上左边和右边的利润. 记录最大值.
