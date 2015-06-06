@@ -15,3 +15,6 @@ In a complete binary tree every level, except possibly the last, is completely f
 总结点数 [2^(h - 1), 2^h - 1)
 e.g. 一棵完全二叉树有770个结点, 则它的叶子结点是259个
 */
+/*
+找到最底层, 然后二分搜索, 找到第一个空节点, 效率是O(logn * logn), 其中n是节点总数
+*/
