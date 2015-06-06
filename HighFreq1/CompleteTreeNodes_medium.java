@@ -13,4 +13,5 @@ In a complete binary tree every level, except possibly the last, is completely f
 完全二叉树(Complete Binary Tree):
 若设二叉树的深度为h, 除第 h 层外, 其它各层(1 ~ h - 1) 的结点数都达到最大个数, 第 h 层所有的结点都连续集中在最左边
 总结点数 [2^(h - 1), 2^h - 1)
+e.g. 一棵完全二叉树有770个结点, 则它的叶子结点是259个
 */
