@@ -70,7 +70,7 @@ public class CompleteTreeSol {
     			p = p.left;
     		}
     		half = half >> 1;
-    	    d++;
+    	        d++;
     	}
     	return d == dep;
     }
