@@ -6,6 +6,9 @@ the subarray [4,3] has the minimal length under the problem constraint.
 More practice:
 If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n).
 */
+/*
+滑动窗口, 若小于s, 把右边界往右滑动扩大窗口, 否则把左边界往右滑, 缩小窗口, 所有的数都是正数
+*/
 public class Solution {
     public int minSubArrayLen(int s, int[] nums) {
         if (nums.length < 1) {
