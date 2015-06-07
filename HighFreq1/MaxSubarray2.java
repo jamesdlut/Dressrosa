@@ -18,11 +18,11 @@ public class MaxSubarray2Sol {
 		int minSum = 0;
 		for (int i = 0; i < len; i++) {
 			if (sum < 0) {
-                sum = 0;
-            }
-            sum += nums[i];
-            max = Math.max(max, sum);
-            left[i] = max;
+                            sum = 0;
+                        }
+                        sum += nums[i];
+                        max = Math.max(max, sum);
+                        left[i] = max;
 			/*
 			sum += nums[i];
 			max = Math.max(max, sum - minSum);
