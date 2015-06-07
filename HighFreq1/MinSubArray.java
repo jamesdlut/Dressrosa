@@ -8,7 +8,7 @@ Example
 For [1, -1, -2, 1], return -3
 */
 public class MinSubSol {
-	public static int minSubArray(int[] nums) {
+	public static int minSubArray1(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return 0;
 		}
@@ -30,9 +30,24 @@ public class MinSubSol {
 		}
 		return min;
 	}
+	// 取反
+	public static int minSubArray2(int[] nums) {
+		int len = nums.length;
+		int max = Integer.MIN_VALUE;
+		int sum = 0;
+		for (int i = 0; i < len; i++) {
+			if (sum < 0) {
+				sum = -nums[i];
+			} else {
+				sum += -nums[i];
+			}
+			max = Math.max(max, sum);
+		}
+		return -max;
+	}
 	
 	public static void main(String[] args) {
 		int[] nums = {1, -1, -2, 1};
-		System.out.print(minSubArray(nums));
+		System.out.print(minSubArray2(nums));
 	}
 }
