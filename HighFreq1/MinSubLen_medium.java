@@ -8,6 +8,10 @@ If you have figured out the O(n) solution, try coding another solution of which 
 */
 public class Solution {
     public int minSubArrayLen(int s, int[] nums) {
+        if (nums.length < 1) {
+            return 0;
+        }
+        
         int left = 0;
         int right = 0;
         int sum = 0;
@@ -24,7 +28,7 @@ public class Solution {
             }
             right++;
         }
-        if (rst == nums.length + 1) {
+        if (rst > nums.length) {
             return 0;
         } else {
             return rst;
