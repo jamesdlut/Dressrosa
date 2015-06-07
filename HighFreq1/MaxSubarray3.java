@@ -10,6 +10,7 @@ Given [-1,4,-2,3,-2,3],k=2, return 8
 */
 /*
 DP d[i][j] means the maximum sum we can get by selecting i subarrays from the first j elements.
+time O(len^2 * k)
 */
 public class MaxSubarray3Sol {
 	public static int maxSubArray(int[] nums, int k) {
