@@ -16,5 +16,11 @@ In a complete binary tree every level, except possibly the last, is completely f
 e.g. 一棵完全二叉树有770个结点, 则它的叶子结点是259个
 */
 /*
+SOL 1
 找到最底层, 然后二分搜索, 找到第一个空节点, 效率是O(logn * logn), 其中n是节点总数
+SOL 2
+判断左子树最右结点的深度和右子树最右结点的深度,
+如果相等, 右子树必为满二叉树, 直接公式算出右子树节点数, 递归左子树
+如果不等, 左子树必为满二叉树, 直接公式算出左子树节点数, 递归右子树
+time O(h^2)
 */
