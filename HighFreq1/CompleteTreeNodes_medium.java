@@ -25,3 +25,111 @@ SOL 2
 如果不等, 左子树必为满二叉树, 直接公式算出左子树节点数, 递归右子树
 time O(h^2)
 */
+public class CompleteTreeSol {
+	public static int countNodes1(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		if (root.left == null && root.right == null) {
+			return 1;
+		}
+		
+		TreeNode pos = root;
+		int dep = 0;
+		while (pos != null) {
+			pos = pos.left;
+			dep++;
+		}
+		
+		int start = 1;
+		int end = (1 << (dep - 1));
+		if (isFull(root, dep, end)) {
+			return (1 << dep) - 1;
+		}
+		
+		while (start + 1 < end) {
+			int mid = start + (end - start) / 2;
+			if (isFull(root, dep, mid)) {
+				start = mid;
+			} else {
+				end = mid;
+			}
+		}
+		return (1 << (dep - 1)) - 1 + start;
+	}
+	
+    private static boolean isFull(TreeNode root, int dep, int start) {
+    	TreeNode p = root;
+    	int d = 0;
+    	int half = 1 << (dep - 2);
+    	while (p != null) {
+    		if (start > half) {
+    			p = p.right;
+    			start = start - half;
+    		} else {
+    			p = p.left;
+    		}
+    		half = half >> 1;
+    	    d++;
+    	}
+    	return d == dep;
+    }
+	
+	public static int countNodes2(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		
+		TreeNode leftNode = root.left;
+		int leftHeight = 0;
+		while (leftNode != null) {
+			leftHeight++;
+			leftNode = leftNode.right;
+		}
+		
+		TreeNode rightNode = root.right;
+		int rightHeight = 0;
+		while (rightNode != null) {
+			rightHeight++;
+			rightNode = rightNode.right;
+		}
+		
+		if (leftHeight == rightHeight) {
+			return 1 + countNodes2(root.left) + ((int)Math.pow(2, rightHeight) - 1);
+		} else {
+			return 1 + countNodes2(root.right) + ((int)Math.pow(2, leftHeight) - 1);
+		}
+	}
+	
+	public static class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode(int x) {
+			val = x;
+		}
+	}
+	
+	public static void main(String[] args) {
+		TreeNode n1 = new TreeNode(1);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n3 = new TreeNode(3);
+		TreeNode n4 = new TreeNode(4);
+		TreeNode n5 = new TreeNode(5);
+		TreeNode n6 = new TreeNode(6);
+		TreeNode n7 = new TreeNode(7);
+		TreeNode n8 = new TreeNode(8);
+		TreeNode n9 = new TreeNode(9);
+		TreeNode n10 = new TreeNode(10);
+		n1.left = n2;
+		n1.right = n3;
+		n2.left = n4;
+		n2.right = n5;
+		n3.left = n6;
+		n3.right = n7;
+		n4.left = n8;
+		n4.right = n9;
+		n5.left = n10;
+		System.out.print(countNodes2(n1));
+	}
+}
