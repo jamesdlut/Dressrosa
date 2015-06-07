@@ -24,6 +24,12 @@ SOL 2
 如果相等, 右子树必为满二叉树, 直接公式算出右子树节点数, 递归左子树
 如果不等, 左子树必为满二叉树, 直接公式算出左子树节点数, 递归右子树
 time O(h^2)
+Let n be the total number of the tree. It is likely that you will get a child tree as a perfect binary tree and a non-perfect binary tree (T(n / 2)) at each level.
+T(n) = T(n / 2) + c1 logn
+     = T(n / 4) + c1 logn + c2 (logn - 1)
+     = ...
+     = T(1) + c [logn + (logn - 1) + (logn - 2) + ... + 1]
+     = O(logn * logn)
 */
 public class CompleteTreeSol {
 	public static int countNodes1(TreeNode root) {
