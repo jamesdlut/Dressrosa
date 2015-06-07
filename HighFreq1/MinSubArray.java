@@ -20,6 +20,13 @@ public class MinSubSol {
 			sum += nums[i];
 			min = Math.min(min, sum - maxSum);
 			maxSum = Math.max(sum, maxSum);
+			/*
+			if (sum > 0) {
+				sum = 0;
+			}
+			sum += nums[i];
+			min = Math.min(min, sum);
+			*/
 		}
 		return min;
 	}
