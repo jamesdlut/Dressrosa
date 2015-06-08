@@ -14,14 +14,14 @@ ___________
 
 TOTAL # 127
 
-Binary Search and Sorted Array 17
+Binary Search and Sorted Array # 17
 
-DP 21
+DP # 21
 
-Binary Tree 30
+Binary Tree # 30
 
-Linked List 19
+Linked List # 19
 
-Graph Search 24
+Graph Search # 24
 
-Data Struc 16
+Data Struc # 16
