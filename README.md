@@ -10,9 +10,16 @@ Reference:
 
 http://www.jiuzhang.com
 
+Statistic 
+
 Binary Search and Sorted Array 17
+
 DP 21
+
 Binary Tree 30
+
 Linked List 19
+
 Graph Search 24
+
 Data Struc 16
