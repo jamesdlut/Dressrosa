@@ -10,7 +10,9 @@ Reference:
 
 http://www.jiuzhang.com
 
-Statistic 
+TOTAL # 127
+
+___________
 
 Binary Search and Sorted Array 17
 
