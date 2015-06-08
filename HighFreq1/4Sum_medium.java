@@ -11,6 +11,7 @@ A solution set is:
 (-2,  0, 0, 2)
 */
 /*
+先排序, 这后两重for循环, 然后对最后的一个数组设两个指针遍历
 time O(nlogn) + O(n^2) * O(n) = O(n^3)
 */
 public class Solution {
