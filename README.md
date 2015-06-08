@@ -10,9 +10,9 @@ Reference:
 
 http://www.jiuzhang.com
 
-TOTAL # 127
-
 ___________
+
+TOTAL # 127
 
 Binary Search and Sorted Array 17
 
