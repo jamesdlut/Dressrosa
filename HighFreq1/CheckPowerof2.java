@@ -11,6 +11,8 @@ O(1) time
 bit manipulation
 1的个数只能有1个才是power of 2
 注意Integer.MIN_VALUE, 这个只有一个1, 但是是false
+note: int 32 bits (-2147483648, 2147483647) (-2^31, 2^31 - 1) (0.后面31个1 = 2^31 - 1)
+Integer.MIN_VALUE = -2147483648 二进制表示 = 1000...0 (31个0, 1是符号位)
 */
 public class CheckPowSol {
 	public static boolean checkPowerOf21(int n) {
