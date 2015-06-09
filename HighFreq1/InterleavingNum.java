@@ -9,5 +9,7 @@ Challenge
 Do it in-place and without extra memory.
 */
 /*
-Put all the positive numbers at in the left part.
+1. Put all the positive numbers at in the left part.
+2. Have more Positive numbers. Reverse the array. 
+3. Reorder the negative and the positive numbers.
 */
