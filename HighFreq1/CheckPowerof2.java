@@ -10,6 +10,7 @@ O(1) time
 /*
 bit manipulation
 1的个数只能有1个才是power of 2
+注意Integer.MIN_VALUE, 这个只有一个1, 但是是false
 */
 public class CheckPowSol {
 	public static boolean checkPowerOf21(int n) {
