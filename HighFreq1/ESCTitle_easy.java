@@ -13,6 +13,10 @@ For example:
 /*
 Excel序是这样的: A~Z, AA~ZZ, AAA~ZZZ, ...
 本质上就是将一个10进制数转换为一个26进制数
+note:
+28 
+append 'A' + 27 % 26 = 'B' -> 0 B
+append 'A' -> 0 B 1 A, that is, BA
 */
 public class Solution {
     public String convertToTitle(int n) {
