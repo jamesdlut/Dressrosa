@@ -8,3 +8,6 @@ Given [-1, -2, -3, 4, 5, 6], after re-range, it will be [-1, 5, -2, 4, -3, 6] or
 Challenge
 Do it in-place and without extra memory.
 */
+/*
+Put all the positive numbers at in the left part.
+*/
