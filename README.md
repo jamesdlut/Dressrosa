@@ -4,7 +4,7 @@ Backup of codes in Apr. (from 04/09/2015)
 
 Share my LeetCode redo solutions here,
 
-Start my second round at 05/01/2015, (147 / 207 problems solved)
+Start my second round from 05/01/2015 to 06/09/2015, (149 / 208 problems solved)
 
 Reference:
 
@@ -12,7 +12,7 @@ http://www.jiuzhang.com
 
 ___________
 
-TOTAL # 127
+TOTAL # 164
 
 Binary Search and Sorted Array # 17
 
@@ -25,3 +25,5 @@ Linked List # 19
 Graph Search # 24
 
 Data Struc # 16
+
+High Frequncy # 37
