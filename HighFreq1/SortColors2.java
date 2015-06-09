@@ -50,20 +50,20 @@ public class SortColors2Sol {
 	}
 	
 	public static int partition(int[] nums, int left, int right, int pivot) {
-		int leftPoint = left - 1;
-		int rightPoint = right;
-		
-		while (true) {
-			while (nums[++leftPoint] < pivot);
-			while (leftPoint < rightPoint && nums[--rightPoint] > pivot);
-			if (leftPoint >= rightPoint) {
-				break;
+		while (left <= right) {
+			while (left <= right && nums[left] < pivot) {
+				left++;
 			}
-			swap(nums, leftPoint, rightPoint);
+			while (left <= right && nums[right] >= pivot) {
+				right--;
+			}
+			if (left <= right) {
+				swap(nums, left, right);
+				left++;
+				right--;
+			}
 		}
-		
-		swap(nums, leftPoint, right);
-		return leftPoint;
+		return left;
 	}
 	
 	public static void swap(int[] nums, int left, int right) {
