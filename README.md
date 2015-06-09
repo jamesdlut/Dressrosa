@@ -26,4 +26,4 @@ Graph Search # 24
 
 Data Struc # 16
 
-High Frequncy # 37
+High Frequency # 37
