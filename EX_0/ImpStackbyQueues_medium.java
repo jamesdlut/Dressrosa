@@ -12,3 +12,62 @@ You may assume that all operations are valid (for example, no pop or top operati
 Update (2015-06-11):
 The class name of the Java function had been updated to MyStack instead of Stack.
 */
+class MyStack1 {
+    Queue<Integer> q = new LinkedList<Integer>();
+    // Push element x onto stack.
+    public void push(int x) {
+        q.offer(x);
+        int size = q.size();
+        while (size > 1) {
+            q.offer(q.poll());
+            size--;
+        }
+    }
+
+    // Removes the element on top of the stack.
+    public void pop() {
+        q.poll();
+    }
+
+    // Get the top element.
+    public int top() {
+        return q.peek();
+    }
+
+    // Return whether the stack is empty.
+    public boolean empty() {
+        return q.isEmpty();
+    }
+}
+
+class MyStack2 {
+    Queue<Integer> q1 = new LinkedList<Integer>();
+    Queue<Integer> q2 = new LinkedList<Integer>();
+    // Push element x onto stack.
+    public void push(int x) {
+        while (!q2.isEmpty()) {
+            q1.offer(q2.peek());
+            q2.poll();
+        }
+        q2.offer(x);
+        while (!q1.isEmpty()) {
+            q2.offer(q1.peek());
+            q1.poll();
+        }
+    }
+
+    // Removes the element on top of the stack.
+    public void pop() {
+        q2.poll();
+    }
+
+    // Get the top element.
+    public int top() {
+        return q2.peek();
+    }
+
+    // Return whether the stack is empty.
+    public boolean empty() {
+        return q2.isEmpty();
+    }
+}
