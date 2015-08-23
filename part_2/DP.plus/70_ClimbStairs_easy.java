@@ -25,7 +25,6 @@ public class Solution {
 // 斐波那契数列：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 // 注：此时a1=0，a2=1，an=a(n-1)+a(n-2)（n>=2,n∈N*）
 // 即：裴波那契数列的第n项的值是第n阶楼梯的爬法的种类数
-// 另外关于tail recurisive，思路和dp差不多，但是会需要多余的space
 // time O(N) space O(N)
 public class Solution {
     public int climbStairs(int n) {
@@ -41,3 +40,4 @@ public class Solution {
         return sum;
     }
 }
+// SOL 3 tail recursive
