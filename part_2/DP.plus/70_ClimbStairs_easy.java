@@ -5,6 +5,7 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 */
 // SOL 1 first we can think about using DFS recursive method. But may cause time limited error.
 // 由于递归的层数太多，需要的内存指数级递增。这也是递归的弊端。而且n越大弊端表现的越明显。
+// time T(n) = T(n - 1) + T(n - 2) = T(n - 2) + T(n - 3) + T(n - 3) + T(n - 4) = ... = O(1.618^n), space O(N)
 public class Solution {
     public int climbStairs(int n) {
         if (n <= 1) {
@@ -25,6 +26,7 @@ public class Solution {
 // 注：此时a1=0，a2=1，an=a(n-1)+a(n-2)（n>=2,n∈N*）
 // 即：裴波那契数列的第n项的值是第n阶楼梯的爬法的种类数
 // 另外关于tail recurisive，思路和dp差不多，但是会需要多余的space
+// time O(N) space O(N)
 public class Solution {
     public int climbStairs(int n) {
         int a = 0;
