@@ -19,7 +19,7 @@ public class Solution {
         return climbStairs(n - 1) + climbStairs(n - 2);
     }
 }
-// SOL 2
+// SOL 2 Iteration
 // 有重复子问题
 // 思路：爬楼梯就是裴波那契数列
 // 斐波那契数列：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
