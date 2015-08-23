@@ -41,3 +41,12 @@ public class Solution {
     }
 }
 // SOL 3 tail recursive
+// 2 more spaces, but dont to store middle stacks.
+// time T(n) = T(n - 1) = T(n - 2) = ... so O(N)
+climStairs(int n, int ret1, int re2) {
+    if (n == 0) {
+        return ret1;
+    }
+    
+    return climStairs(n - 1, ret2, ret1 + ret2);
+}
