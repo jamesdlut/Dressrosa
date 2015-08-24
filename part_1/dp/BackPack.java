@@ -21,10 +21,10 @@ time O(N*target)
 f[i][j] “前i”个数,取出一些能否凑成j, here j is the target number
 */
 // This is a typical backpack question.
-// state: we can create a two-dimensional boolean array f[i][S], the first sequence represents the first i items, the second sequence represents the target number.
-// function: we use f[i][S] = f[i - 1][S - A[i]] this function to iterate in a loop.
-// initialize: we can first initialize all of the f[i][S] to false in a loop.
-// answer: write a loop to check out the true element in array, which is the final result.
+// state: we can create a two-dimensional boolean array f[i][S] to record all possible cases, the first sequence represents the first i items, the second sequence represents the target number.
+// function: we use f[i][S] = f[i - 1][S - A[i]] this function to go through all possible cases in a loop.
+// initialize: we can first initialize all of the f[i][S] boolean values to false in a loop.
+// answer: write a loop to check out the case with true value in array, which is the final result.
 public class Solution {
     /**
      * @param m: An integer m denotes the size of a backpack
