@@ -10,18 +10,21 @@ You function should return the max size we can fill in the given backpack.
 */
 /*
 这个问题不能保证速度比搜索来的快
-最坏情况：items的大小 1, 2, 4, 8, 16 … 对2的幂次数据，搜索和dp做速度都是一样，没有优化
+最坏情况：items的大小 [1, 2, 4, 8, 16 …] 对2的幂次数据，搜索和dp做速度都是一样，没有优化
 time O(N*target)
-1 2 3
+[1, 2, 3]
 -> 1 2 ［3］ 4 5 6 可以组成的和这么几种情况 用搜索 3 是由本身的3组成还是由 1 2 组成，重复运算dp来做可以优化
-1 2 4
+[1, 2, 4]
 -> 1 2 3 4 5 6 7 三个数组成的和最坏的情况 此情况根本没有重复运算，所以dp没有任何优化
 */
 /*
 f[i][j] “前i”个数,取出一些能否凑成j, here j is the target number
-A = [2, 3, 5, 7] m = 11
-i = 0 j = 0 can[1][0] = can[0][0] = true 0 < A[0] j = 1 can[1][1] = can[0][1] = false 1 < A[0] j = 2 can[1][2] = can[0][2] = false 2 = A[0], can[0][2 - 2] = true can[1][2] 
 */
+// This is a typical backpack question.
+// state: we can create a two-dimensional array f[i][S], the first list represents the first i items, the second list represents the target number.
+// function: we use f[i][S] = f[i - 1][S - A[i]] this function to iterate.
+// initialize: we can first initialize the f[i][0] and f[0][i].
+// answer: f[n][target] is the final result.
 public class Solution {
     /**
      * @param m: An integer m denotes the size of a backpack
