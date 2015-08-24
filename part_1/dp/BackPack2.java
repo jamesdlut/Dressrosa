@@ -7,6 +7,8 @@ You cannot divide item into small pieces and the total size of items you choose 
 Example
 Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack with size 10. The maximum value is 9.
 */
+// time O(VN)
+// space O(VN)
 public class Solution {
     /**
      * @param m: An integer m denotes the size of a backpack
