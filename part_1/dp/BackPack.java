@@ -21,7 +21,7 @@ time O(N*target)
 f[i][j] “前i”个数,取出一些能否凑成j, here j is the target number
 */
 // This is a typical backpack question.
-// state: we can create a two-dimensional array f[i][S], the first list represents the first i items, the second list represents the target number.
+// state: we can create a two-dimensional array f[i][S], the first sequence represents the first i items, the second sequence represents the target number.
 // function: we use f[i][S] = f[i - 1][S - A[i]] this function to iterate.
 // initialize: we can first initialize the f[i][0] and f[0][i].
 // answer: f[n][target] is the final result.
