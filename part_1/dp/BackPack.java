@@ -23,6 +23,7 @@ f[i][j] “前i”个数,取出一些能否凑成j, here j is the target number
 /*
 quote from http://love-oriented.com/pack/#sec1
 */
+// time O(N*target) space O(N*target)
 // This is a typical 0-1 backpack question.
 // state: we can create a two-dimensional boolean array f[i][S] to record all possible cases, the first sequence represents the first i items, the second sequence represents the target number.
 // function: we use f[i][S] = f[i - 1][S - A[i]] this function to go through all possible cases in a loop.
