@@ -11,7 +11,6 @@ You function should return the max size we can fill in the given backpack.
 /*
 这个问题不能保证速度比搜索来的快
 最坏情况：items的大小 [1, 2, 4, 8, 16 …] 对2的幂次数据，搜索和dp做速度都是一样，没有优化
-time O(N*target)
 [1, 2, 3]
 -> 1 2 ［3］ 4 5 6 可以组成的和这么几种情况 用搜索 3 是由本身的3组成还是由 1 2 组成，重复运算dp来做可以优化
 [1, 2, 4]
