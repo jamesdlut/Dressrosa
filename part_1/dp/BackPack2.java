@@ -7,6 +7,8 @@ You cannot divide item into small pieces and the total size of items you choose 
 Example
 Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack with size 10. The maximum value is 9.
 */
+// 0/1 knapspack problem is NP-complete problem, 無法快速求得精確解, 只能折衷求得近似解. 然而, 當數值範圍不大時, 得以用動態規劃快速求得精確解.
+// Brute Force Solution: 窮舉所有子集合, 找出物品總重量符合限制, 物品總價值最大的子集合. 所有的子集合總共 O(2^N) 個, 驗證一個子集合需時 O(N) , 所以時間複雜度為 O(2^N * N) . 其中 N 是物品的數量.
 // time O(VN)
 // space O(VN)
 public class Solution {
