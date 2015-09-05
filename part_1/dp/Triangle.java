@@ -59,6 +59,6 @@ public int minimumTotal1(List<List<Integer>> triangle) {
                     sum[i][j] = triangle.get(i).get(j) + Math.min(sum[i + 1][j], sum[i + 1][j + 1]);
                }
           }
-          return sum[0][0];
      }
+     return sum[0][0];
 }
