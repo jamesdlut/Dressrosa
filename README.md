@@ -8,10 +8,6 @@ Share my LeetCode redo solutions here,
 
 Start my second round from 05/01/2015 to 06/09/2015, (149 / 208 problems solved)
 
-Reference:
-
-http://www.jiuzhang.com
-
 ___________
 
 TOTAL # 164
